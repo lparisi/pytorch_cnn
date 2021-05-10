@@ -25,19 +25,6 @@ BATCH_SIZE = 64
 NUM_EPOCHS = 5
 
 
-#Create Simply Fully Connected Neural Net
-class NN(nn.Module):
-    def __init__(self, input_size, NUM_CLASSES):
-        super(NN, self).__init__()
-        self.fc1 = nn.Linear(input_size, 50)
-        self.fc2 = nn.Linear(50, NUM_CLASSES)
-
-    def forward(self, x):
-        x = F.relu(self.fc1(x))
-        x = self.fc2(x)
-        return x
-
-
 class CNN(nn.Module):
     def __init__(self, in_channels =1, num_classes = NUM_CLASSES):
         super(CNN, self).__init__()
